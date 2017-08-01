@@ -2,6 +2,7 @@
 
 $(document).foundation()
 
+<<<<<<< HEAD
 $('#registerButton').click(function (e) {
     e.preventDefault();
 
@@ -37,3 +38,10 @@ firebase.auth().onAuthStateChanged(function(user) {
 $('#loginButton').click(function () {
 
 })
+=======
+function displayBookInfo() {
+  var API
+}
+
+console.log("hi")
+>>>>>>> refs/remotes/origin/master
