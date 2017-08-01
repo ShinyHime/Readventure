@@ -1,0 +1,36 @@
+[debug] [2017-08-01T01:33:02.923Z] ----------------------------------------------------------------------
+[debug] [2017-08-01T01:33:02.938Z] Command:      C:\Program Files\nodejs\node.exe C:\Users\jakie\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2017-08-01T01:33:02.938Z] CLI Version:  3.9.1
+[debug] [2017-08-01T01:33:02.938Z] Platform:     win32
+[debug] [2017-08-01T01:33:02.938Z] Node Version: v6.10.3
+[debug] [2017-08-01T01:33:02.938Z] Time:         Mon Jul 31 2017 20:33:02 GMT-0500 (Central Daylight Time)
+[debug] [2017-08-01T01:33:02.938Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-08-01T01:33:02.954Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-08-01T01:33:02.954Z] > authorizing via signed-in user
+[debug] [2017-08-01T01:33:02.954Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-08-01T01:33:02.954Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/taJGb-xdWnLf8xo5VWKzIs5P_v4N3Sja_2uZmDnvPcSzsd6T3qPPceLvVn2U1tbY',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Mon Jul 31 2017 20:33:02 GMT-0500 (Central Daylight Time)
+[debug] [2017-08-01T01:33:03.097Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-01T01:33:03.143Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/readventure-64ea7  
+ Mon Jul 31 2017 20:33:03 GMT-0500 (Central Daylight Time)
+[debug] [2017-08-01T01:33:04.020Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-01T01:33:04.020Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/readventure-64ea7/tokens  
+ Mon Jul 31 2017 20:33:04 GMT-0500 (Central Daylight Time)
+[debug] [2017-08-01T01:33:04.348Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\jakie\ut_bootcamp\project_1\Readventure'...
+[info] 
+[debug] [2017-08-01T01:33:04.348Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/readventure-64ea7  
+ Mon Jul 31 2017 20:33:04 GMT-0500 (Central Daylight Time)
+[debug] [2017-08-01T01:33:04.559Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-01T01:33:04.560Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/137725170405/clients/_:getWebAppConfig  
+ Mon Jul 31 2017 20:33:04 GMT-0500 (Central Daylight Time)
+[debug] [2017-08-01T01:33:04.894Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+
