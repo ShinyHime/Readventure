@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Readventures</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="assets/css/foundation.min.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <div id="bookSearch">
+    <form id="bookForm">
+      <label for="bookInput">Search for a New Readventure</label>
+      <input type="text" id="bookInput" placeholder="ex: Green Eggs and Ham">
+    <input id="searchBook" class="btn btn-primary" type="submit" value="SUBMIT">
+    </form>
+
+    <div id="searchOptions"></div>
+  </div>
+
+  <div id="readventureBooks"></div>
+
+  <div id="bookInfo">
+    <img class="cover">
+    <div class="title"></div>
+    <div class="pages"></div>
+    <div class="description"></div>
+  </div>
+
+
+  <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyC8WTQ2j_fFZaxfR-yh3HIxfWDSStT2GEc",
+      authDomain: "readventure-64ea7.firebaseapp.com",
+      databaseURL: "https://readventure-64ea7.firebaseio.com",
+      projectId: "readventure-64ea7",
+      storageBucket: "readventure-64ea7.appspot.com",
+      messagingSenderId: "137725170405"
+    };
+    firebase.initializeApp(config);
+  </script>
+
+  <script src="assets/js/vendor/jquery.js"></script>
+  <script src="assets/js/vendor/foundation.min.js"></script>
+  <script src="assets/js/vendor/moment.js"></script>
+
+  <script src="assets/js/ui.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+
+</html>
