@@ -12,14 +12,23 @@
 <body>
 
   <header class="sticky-shrinknav-header">
-    <!-- <h1 class="sticky-shrinknav-header-title">sticky-shrinknav</h1> -->
-    <img src="assets/images/READVENTURE_logo.png" alt="READventure" id="bannerLogo">
+    <h1 class="sticky-shrinknav-header-title"><img src="assets/images/READVENTURE_logo.png" alt="READventure" id="bannerLogo"></h1>
+    <!-- <img src="assets/images/READVENTURE_logo.png" alt="READventure" id="bannerLogo"> -->
     <ul class="menu align-center sticky-shrinknav-menu">
       <li><a href="#">About</a></li>
-      <li><a href="#">Register</a></li>
+      <li><a href="#" id="loginButton">Login</a></li>
+      <li><a href="register.html">Register</a></li>
       <li><a href="#">FAQ</a></li>
     </ul>
   </header>
+
+  <div class="grid-container">
+    <div class="grid-x">
+      <div class="small-12 medium-4 cell">
+        <img src="assets/images/READVENTURE_logo.png" alt="READventure" id="bannerLogo">
+      </div>
+    </div>
+  </div>
 
   <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
   <script>
@@ -37,7 +46,6 @@
 
   <script src="assets/js/vendor/jquery.js"></script>
   <script src="assets/js/vendor/foundation.min.js"></script>
-  <script src="assets/js/vendor/moment.js"></script>
 
   <script src="assets/js/ui.js"></script>
   <script src="assets/js/app.js"></script>
