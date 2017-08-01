@@ -1,39 +1,77 @@
+var db = firebase.database();
+
 $(document).foundation()
 
-$('#searchBook').on("click", function(event) {
+$('#bookSearchButton').on("click", function (event) {
 
-  //Prevents form html from refreshing the page
-  event.preventDefault();
-  //store input from field in a variable
-  var title = $('#bookInput').val().trim();
-  var queryURL = "https://www.googleapis.com/books/v1/volumes?q=:" + title + "&maxResults=3";
+    var user = firebase.auth().currentUser;
 
-  $.ajax({
-  url: queryURL,
-  method: "GET"
-}).done(function(response) {
+    //Prevents form html from refreshing the page
+    event.preventDefault();
 
-  console.log(response);
+    //store input from field in a variable
+    var title = $('#bookInput').val().trim();
+    var queryURL = "https://www.googleapis.com/books/v1/volumes?q=:" + title + "&maxResults=10";
 
+    $.ajax({
+        url: queryURL,
+        method: "GET",
+        type: "JSON"
+    }).done(function (response) {
 
+        $.each(response.items, function (index, book) {
+            // console.log(book);
+            var bookInfo = {
+                title: book.volumeInfo.title,
+                id: book.id,
+                cover: book.volumeInfo.imageLinks.thumbnail,
+                description: book.volumeInfo.description,
+                pageCount: book.volumeInfo.pageCount,
+                buyLink: book.saleInfo.buyLink
+            }
+
+            displayBookInfo(bookInfo);
+        })
+    })
+    // clear book search input field
+    $("#bookInput").val("");
 })
 
-  $("#bookInput").val("");
 
-})
+function displayBookInfo(bookInfo) {
+    $('#bookventures').empty();
 
+    var bookCard = $('<div id="' + bookInfo.id + '" ontouchstart="this.classList.toggle("hover");">');
+    var bookCardInner = $('<div>');
+    var bookCardFront = $('<div>');
+    var bookCardBack = $('<div>');
+    var bookCardFrontContent = $('<span>');
+    var bookCover = $('<img>').attr('src', bookInfo.cover);
+    var removeButton = $('<button type="button" class="button removeButton">ADD</button>');
 
-function displayBookInfo() {
-  var APIkey = "AIzaSyDA6jUVJy0nexi2oe7wmyLcm_EJmQ08eU0";
-  var isbn = "0545010225";
-  var queryURL = "https://www.googleapis.com/books/v1/volumes?q=isbn:" + isbn;
+    bookCard.addClass('small-12 medium-4 large-3 cell bookCard flip-card')
 
-  $.ajax({
-  url: queryURL,
-  method: "GET"
-}).done(function(response) {
+    bookCardFrontContent.append(bookCover);
 
-})
+    bookCardFront.addClass('flip-card-inner-front')
+        .append(bookCardFrontContent)
+        .attr('data-key', bookInfo.id);
+
+    bookCardBack.addClass('flip-card-inner-back')
+        .append(removeButton)
+
+    bookCardInner.addClass('flip-card-inner')
+        .append(bookCardFront)
+        .append(bookCardBack)
+
+    bookCard
+        .append(bookCardInner);
+
+    $('#readventures').append(bookCard);
+    $('#readventures').animate({
+        opacity: 1.0
+    }, 800);
+
 }
 
 $('#registerButton').click(function (e) {
@@ -51,29 +89,26 @@ $('#registerButton').click(function (e) {
     });
 })
 
-firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
-    // User is signed in.
-    var displayName = user.displayName;
-    var email = user.email;
-    var emailVerified = user.emailVerified;
-    var photoURL = user.photoURL;
-    var isAnonymous = user.isAnonymous;
-    var uid = user.uid;
-    var providerData = user.providerData;
-    // ...
-  } else {
-    // User is signed out.
-    // ...
-  }
-});
-
 $('#loginButton').click(function () {
 
 })
 
-function displayBookInfo() {
-  var API
-}
+firebase.auth().onAuthStateChanged(function (user) {
 
-console.log("hi")
+    window.user = user;
+
+    if (user) {
+        // User is signed in.
+        var displayName = user.displayName;
+        var email = user.email;
+        var emailVerified = user.emailVerified;
+        var photoURL = user.photoURL;
+        var isAnonymous = user.isAnonymous;
+        var uid = user.uid;
+        var providerData = user.providerData;
+        // ...
+    } else {
+        // User is signed out.
+        // ...
+    }
+});

@@ -2,31 +2,130 @@
 <html lang="en">
 
 <head>
-  <title>Train Scheduler</title>
+  <title>Readventure</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="assets/css/foundation.min.css" rel="stylesheet">
+  <link href="assets/css/vendor/foundation.min.css" rel="stylesheet">
+  <link href="assets/css/vendor/foundation-icons/foundation-icons.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
 </head>
 
-<body>
-
-  <header class="sticky-shrinknav-header">
-    <h1 class="sticky-shrinknav-header-title"><img src="assets/images/READVENTURE_logo.png" alt="READventure" id="bannerLogo"></h1>
-    <!-- <img src="assets/images/READVENTURE_logo.png" alt="READventure" id="bannerLogo"> -->
-    <ul class="menu align-center sticky-shrinknav-menu">
+<body id="home">
+  <div class="grid-container" id="homeHeader">
+    <ul class="menu menu-hover-lines">
+      <li class="active"><a href="#">Home</a></li>
       <li><a href="#">About</a></li>
-      <li><a href="#">Register</a></li>
-      <li><a href="#">FAQ's</a></li>
+      <li><a href="#">Our Team</a></li>
+      <li><a href="register.html">Sign Up</a></li>
+      <li><a href="#">Login</a></li>
     </ul>
-  </header>
+  </div>
+  <div class="small-12 cell" id="homeBanner">
+    <img src="assets/images/READVENTURE_logo.png" alt="main article image" id="bannerLogo">
+  </div>
 
-  <div class="grid-container">
-    <div class="grid-x">
-      <div class="small-12 medium-4 cell">
-        <img src="assets/images/READVENTURE_logo.png" alt="READventure" id="bannerLogo">
+  <div class="grid-container" id="mainHome">
+    <!--rachel Tuesday entries start-->
+    <!--Main logo and articles area  -->
+    <div class="grid-x grid-margin-x grid-margin-y align-center">
+      <!--About Section  -->
+      <div class="small-12 cell">
+        <div class="small-12 homeTitle">
+          <h1>About Readventure</h1>
+        </div>
+        <div class="grid-y grid-margin-y grid-margin-x" id="articles">
+          <div class="cell">
+            <div class="grid-x grid-margin-x">
+              <div class="small-12 medium-12 large-5 cell">
+                <img src="https://placehold.it/400x200&amp;text=Other cool article" alt="article promo image">
+              </div>
+              <div class="small-12 medium-12 large-7 cell">
+                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin
+                  literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney
+                  College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage,
+                  and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem
+                  Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good
+                  and Evil) by Cicero, written in 45 BC.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="cell">
+            <div class="grid-x grid-margin-x">
+              <div class="small-12 medium-12 large-5 cell">
+                <img src="https://placehold.it/400x200&amp;text=Other cool article" alt="article promo image">
+              </div>
+              <div class="small-12 medium-12 large-7 cell">
+                <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections
+                  1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original
+                  form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+      <div class="small-12 cell homeTitle">
+        <h1>Our Team</h1>
+      </div>
+      <div class="small-12 medium-4 cell teamMember">
+        <h3>Rachel Estrada</h3>
+        <img src="assets/images/rachelHolder.png" alt="Team Member" class="teamMemberPic">
+        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at
+          its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed
+          to using 'Content here, content here', making it look like readable English.</p>
+      </div>
+      <div class="small-12 medium-4 cell teamMember">
+        <h3>Cassandra Villaruel</h3>
+        <img src="assets/images/cassandraHolder.png" alt="Team Member" class="teamMemberPic">
+        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at
+          its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed
+          to using 'Content here, content here', making it look like readable English.</p>
+      </div>
+      <div class="small-12 medium-4 cell teamMember">
+        <h3>Jakie Rice</h3>
+        <img src="assets/images/jakieHolder.png" alt="Team Member" class="teamMemberPic">
+        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at
+          its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed
+          to using 'Content here, content here', making it look like readable English.</p>
+      </div>
+
+      <!-- </div> -->
+      <!-- <div class="small-12 large-4 cell">
+        <h5>Books</h5>
+        <span class="secondary label">Books</span>
+        <span class="secondary label">Book2</span>
+        <span class="secondary label">Book3</span>
+        <span class="secondary label">Book4</span>
+      </div>
+      <div class="small-12 large-4 cell">
+        <h5>RANDOM MAG</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti quam voluptatum vel repellat ab similique molestias
+          molestiae ea omnis eos, id asperiores est praesentium, voluptate officia nulla aspernatur sequi aliquam.</p>
+      </div> -->
     </div>
+    <!-- <footer>
+      <div class="row expanded callout secondary">
+        <div class="row expanded">
+          <div class="small-12 medium-6 cell">
+            <ul class="menu">
+              <li><a href="#">Legal</a></li>
+              <li><a href="#">Partner</a></li>
+              <li><a href="#">Explore</a></li>
+            </ul>
+          </div>
+          <div class="small-12 medium-6 cell">
+            <ul class="menu align-right">
+              <li class="menu-text">Copyright © 2099 Random Mag</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
+     </footer>
+    </footer>  -->
+    <!--rachel Tuesday entries end-->
+  </div>
   </div>
 
   <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
@@ -42,7 +141,6 @@
     };
     firebase.initializeApp(config);
   </script>
-
   <script src="assets/js/vendor/jquery.js"></script>
   <script src="assets/js/vendor/foundation.min.js"></script>
 

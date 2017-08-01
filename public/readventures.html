@@ -5,31 +5,63 @@
   <title>Readventures</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="assets/css/foundation.min.css" rel="stylesheet">
+  <link href="assets/css/vendor/foundation.min.css" rel="stylesheet">
+  <link href="assets/css/vendor/foundation-icons/foundation-icons.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
 </head>
 
 <body>
-
-  <div id="bookSearch">
-    <form id="bookForm">
-      <label for="bookInput">Search for a New Readventure</label>
-      <input type="text" id="bookInput" placeholder="ex: Green Eggs and Ham">
-    <input id="searchBook" class="btn btn-primary" type="submit" value="SUBMIT">
-    </form>
-
-    <div id="searchOptions"></div>
+  <nav role="navigation">
+    <ul id="overlay-nav-menu" class="overlay-nav-menu">
+      <li><a href="#">Current Bookventures</a></li>
+      <li><a href="#">Completed Bookventures</a></li>
+      <li><a href="#">Logout</a></li>
+    </ul>
+    <div class="grid-x grid-padding-y">
+      <div class="small-12 medium-5 cell">
+        <a data-toggle-menu class="overlay-nav-menu-toggle" href="#overlay-nav-menu"><i class="fi-plus"></i></a>
+      </div>
+      <div class="small-12 medium-6 cell">
+        <div class="input-group input-group-rounded">
+          <input class="input-group-field" type="search" placeholder="Search for a new book..." id="bookInput">
+          <div class="input-group-button">
+            <input type="submit" class="button secondary" value="Search" id="bookSearchButton">
+          </div>
+        </div>
+      </div>
+  </nav>
+  </div>
+  <div class="grid-container grid-container-padding">
+    <div class="grid-x grid-margin-y grid-margin-x" id="readventures">
+      <!-- <div class="small-12 cell" id="readventures"></div> -->
+    </div>
   </div>
 
-  <div id="readventureBooks"></div>
 
-  <div id="bookInfo">
-    <img class="cover">
-    <div class="title"></div>
-    <div class="pages"></div>
-    <div class="description"></div>
-  </div>
 
+  <!--Cassandra build  -->
+  <!-- <div class="grid-container">
+    <div class="grid-x grid-margin-x grid-margin-y">
+      <div class="small-6 cell">
+        <form id="bookForm">
+          <label for="bookInput">Search for a New Readventure</label>
+          <input type="text" id="bookInput" placeholder="ex: Green Eggs and Ham">
+          <input id="searchBook" class="btn btn-primary" type="submit" value="SUBMIT">
+          <a data-toggle-menu class="overlay-nav-menu-toggle" href="#overlay-nav-menu"><i class="fa fa-plus"></i></a>
+        </form>
+      </div>
+    </div>
+    <div id="bookSearch">
+      <div id="searchOptions"></div>
+    </div>
+    <div id="readventureBooks"></div>
+    <div id="bookInfo">
+      <img class="cover">
+      <div class="title"></div>
+      <div class="pages"></div>
+      <div class="description"></div>
+    </div>
+  </div> -->
 
   <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
   <script>
@@ -47,7 +79,6 @@
 
   <script src="assets/js/vendor/jquery.js"></script>
   <script src="assets/js/vendor/foundation.min.js"></script>
-  <script src="assets/js/vendor/moment.js"></script>
 
   <script src="assets/js/ui.js"></script>
   <script src="assets/js/app.js"></script>

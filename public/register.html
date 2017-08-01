@@ -5,8 +5,9 @@
     <title>Register - Readventure</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="assets/css/foundation.min.css" rel="stylesheet">
+    <link href="assets/css/vendor/foundation.min.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/vendor/foundation-icons/foundation-icons.css" rel="stylesheet">
 
 
     <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
@@ -28,11 +29,11 @@
     <script type="text/javascript">
         // FirebaseUI config.
         var uiConfig = {
-            signInSuccessUrl: 'index.html',
+            signInSuccessUrl: 'readventures.html',
             signInOptions: [
                 // Leave the lines as is for the providers you want to offer your users.
                 firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-                // firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+                firebase.auth.FacebookAuthProvider.PROVIDER_ID,
                 // firebase.auth.TwitterAuthProvider.PROVIDER_ID,
                 // firebase.auth.GithubAuthProvider.PROVIDER_ID,
                 firebase.auth.EmailAuthProvider.PROVIDER_ID,
@@ -49,48 +50,23 @@
     </script>
 </head>
 
-<body>
-
-    <header class="sticky-shrinknav-header">
-        <!-- <h1 class="sticky-shrinknav-header-title">sticky-shrinknav</h1> -->
-        <img src="assets/images/READVENTURE_logo.png" alt="READventure" id="bannerLogo">
-        <ul class="menu align-center sticky-shrinknav-menu">
-            <li><a href="#">About</a></li>
-            <li><a href="#" id="loginButton">Login</a></li>
-            <li><a href="register.html">Register</a></li>
-            <li><a href="#">FAQ</a></li>
-        </ul>
-    </header>
+<body id="register">
+  <div class="grid-container" id="registerHeader">
+    <ul class="menu menu-hover-lines">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Our Team</a></li>
+      <li class="active"><a href="register.html">Sign Up</a></li>
+      <li><a href="#">Login</a></li>
+    </ul>
+  </div>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
 
     <div class="grid-container grid-container-padding">
         <div class="grid-x">
             <div class="small-12 cell">
-                    <div id="firebaseui-auth-container"></div>
-
-                <!-- <form>
-                    <div class="form-icons">
-                        <h4>Register for an account</h4>
-
-                        <div class="input-group">
-                            <span class="input-group-label"><i class="fa fa-user"></i></span>
-                            <input class="input-group-field" type="text" id="newUserName" placeholder="Full name">
-                        </div>
-
-                        <div class="input-group">
-                            <span class="input-group-label"><i class="fa fa-envelope"></i></span>
-                            <input class="input-group-field" type="text" id="newUserEmail" placeholder="Email">
-                        </div>
-
-                        <div class="input-group">
-                            <span class="input-group-label"><i class="fa fa-key"></i></span>
-                            <input class="input-group-field" type="text" id="newUserPassword" placeholder="Password">
-                        </div>
-                    </div>
-
-                    <button class="button expanded" id="registerButton">Sign Up</button>
-                </form> -->
+                <div id="firebaseui-auth-container"></div>
             </div>
         </div>
     </div>
