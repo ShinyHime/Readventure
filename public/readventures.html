@@ -11,57 +11,131 @@
 </head>
 
 <body>
-  <nav role="navigation">
-    <ul id="overlay-nav-menu" class="overlay-nav-menu">
-      <li><a href="#">Current Bookventures</a></li>
-      <li><a href="#">Completed Bookventures</a></li>
-      <li><a href="#">Logout</a></li>
-    </ul>
-    <div class="grid-x grid-padding-y">
-      <div class="small-12 medium-5 cell">
-        <a data-toggle-menu class="overlay-nav-menu-toggle" href="#overlay-nav-menu"><i class="fi-plus"></i></a>
+  <div class="grid-x grid-padding-y grid-padding-x header" id="readventuresHeader">
+    <div class="small-12 medium-5 cell">
+      <nav role="navigation">
+        <ul id="overlay-nav-menu" class="overlay-nav-menu">
+          <li><a href="#" id="currentReadventuresButton">Current Readventures</a></li>
+          <li><a href="#">Completed Readventures</a></li>
+          <li><a href="#" data-toggle="searchModal">Find a new Readventure</a></li>
+          <li><a href="#" id="logoutButton">Logout</a></li>
+        </ul>
+
+        <a data-toggle-menu class="overlay-nav-menu-toggle" href="#overlay-nav-menu"><i class="fi-plus" id="menuActionButton"></i></a>
+        <a class="overlay-nav-menu-toggle" href="#"><i class="fi-arrow-left" id="menuBackButton" hidden></i></a>
+    </div>
+
+    <!-- <form class="small-12 medium-7 cell" id="bookSearch">
+      <div class="input-group input-group-rounded">
+        <input class="input-group-field" type="search" placeholder="Search for a new book..." id="bookInput">
+        <div class="input-group-button">
+          <input type="submit" class="button secondary" value="Search" id="bookSearchButton">
+        </div>
       </div>
-      <div class="small-12 medium-6 cell">
+    </form> -->
+    <div class="small-12 medium-7 cell" id="readventureToolButtons">
+    </div>
+  </div>
+  </nav>
+  </div>
+
+  <!--Search for new book Modal  -->
+  <div class="large reveal" id="searchModal" data-reveal>
+    <h2>Find a new Readventure!</h2>
+    <div class="grid-x">
+      <form class="small-12 medium-7 cell" id="bookSearch">
         <div class="input-group input-group-rounded">
           <input class="input-group-field" type="search" placeholder="Search for a new book..." id="bookInput">
           <div class="input-group-button">
             <input type="submit" class="button secondary" value="Search" id="bookSearchButton">
           </div>
         </div>
-      </div>
-  </nav>
+      </form>
+    </div>
+    <div class="grid-x grid-margin-y" id="bookResults">
+
+    </div>
+    <button class="close-button
+    " data-close aria-label="Close reveal" type="button"><span aria-hidden="true">&times;</span></button>
   </div>
-  <div class="grid-container grid-container-padding">
-    <div class="grid-x grid-margin-y grid-margin-x" id="readventures">
-      <!-- <div class="small-12 cell" id="readventures"></div> -->
+
+  <!--Bookmark modal  -->
+  <div class="medium reveal" id="bookmarkModal" data-reveal>
+    <h2>Enter your page number!</h2>
+    <div class="grid-x" id="bookmarkModalContent">
+    </div>
+    <button class="close-button modalClose" data-close aria-label="Close reveal" type="button"><span aria-hidden="true">&times;</span></button>
+  </div>
+
+  <!--Take note modal  -->
+  <div class="medium reveal" id="notesModal" data-reveal>
+    <h2>Enter your page number!</h2>
+    <form class="grid-x grid-margin-x align-center" id="notesModalContent">
+      <div class="medium-6 cell">
+        <label>Note Title<input type="text" placeholder="New Note" id="noteTitle"></label>
+      </div>
+      <div class="medium-6 cell">
+        <label>Page Number (optional)<input type="text" placeholder="214" id="notePageNumber"></label>
+      </div>
+      <div class="medium-12 cell">
+        <textarea type="text" placeholder="Add a new note here..." id="noteInput"></textarea>
+      </div>
+      <input type="button" class="small-8 cell button" value="Add Note" id="addNoteButton" data-close>
+    </form>
+    <button class="close-button modalClose" data-close aria-label="Close reveal" type="button"><span aria-hidden="true">&times;</span></button>
+  </div>
+
+  <!--Main game content area -->
+
+  <div class="grid-container main">
+    <div class="grid-x">
+      <!--Begin user content area  -->
+      <div class="small-12 medium-4 cell" id="userArea">
+        <div class="grid-x grid-padding-x align-center">
+          <div class="small-5 cell">
+            <img src="" alt="" class="avatar" id="userAvatar" data-toggle="chooseAvatarModal">
+            <div class="large reveal" id="chooseAvatarModal" data-reveal>
+              <h1>Choose your avatar!</h1>
+              <div class="grid-x">
+                <div class="small-3">
+                  <img src="assets/images/av1.png" alt="" class="avatarChoice modalClose" data-avatarSource="assets/images/av1.png" data-close>
+                </div>
+                <div class="small-3">
+                  <img src="assets/images/av2.png" alt="" class="avatarChoice modalClose" data-avatarSource="assets/images/av2.png" data-close>
+                </div>
+                <div class="small-3">
+                  <img src="assets/images/av3.png" alt="" class="avatarChoice modalClose" data-avatarSource="assets/images/av3.png" data-close>
+                </div>
+                <div class="small-3">
+                  <img src="assets/images/av4.png" alt="" class="avatarChoice modalClose" data-avatarSource="assets/images/av4.png" data-close>
+                </div>
+              </div>
+              <button class="close-button modalClose" data-close aria-label="Close reveal" type="button"><span aria-hidden="true">&times;</span></button>
+            </div>
+          </div>
+          <div class="small-7">
+            <div class="grid-margin-y">
+              <div class="small-2" id="userLevel">
+                <h2>Level: </h2>
+              </div>
+              <div class="small-10" id="userTreasures">
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="small-12 medium-8 cell">
+        <!-- <h2 id="readventuresTitle"></h2> -->
+        <div class="grid-x" id="readventures">
+          <div class="small-12 cell">
+            <div class="grid-x" id="readventureBookInfo"></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
-
-
-  <!--Cassandra build  -->
-  <!-- <div class="grid-container">
-    <div class="grid-x grid-margin-x grid-margin-y">
-      <div class="small-6 cell">
-        <form id="bookForm">
-          <label for="bookInput">Search for a New Readventure</label>
-          <input type="text" id="bookInput" placeholder="ex: Green Eggs and Ham">
-          <input id="searchBook" class="btn btn-primary" type="submit" value="SUBMIT">
-          <a data-toggle-menu class="overlay-nav-menu-toggle" href="#overlay-nav-menu"><i class="fa fa-plus"></i></a>
-        </form>
-      </div>
-    </div>
-    <div id="bookSearch">
-      <div id="searchOptions"></div>
-    </div>
-    <div id="readventureBooks"></div>
-    <div id="bookInfo">
-      <img class="cover">
-      <div class="title"></div>
-      <div class="pages"></div>
-      <div class="description"></div>
-    </div>
-  </div> -->
 
   <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
   <script>
@@ -79,8 +153,10 @@
 
   <script src="assets/js/vendor/jquery.js"></script>
   <script src="assets/js/vendor/foundation.min.js"></script>
-
   <script src="assets/js/ui.js"></script>
+
+  <script src="assets/js/readventures.js"></script>
+
   <script src="assets/js/app.js"></script>
 </body>
 

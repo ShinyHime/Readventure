@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Register - Readventure</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="assets/css/vendor/foundation.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/vendor/foundation-icons/foundation-icons.css" rel="stylesheet">
+
+</head>
+
+<body id="register">
+    <div class="grid-container" id="registerHeader">
+        <ul class="menu menu-hover-lines">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Our Team</a></li>
+            <li><a href="register.html">Sign Up</a></li>
+            <li class="active"><a href="login.html">Login</a></li>
+        </ul>
+    </div>
+
+    <div class="grid-container">
+        <div class="grid-x grid-padding-y align-center">
+            <div class="small-12 medium-7">
+                <form class="callout text-center">
+                    <h2>Login</h2>
+                    <div class="floated-label-wrapper">
+                        <label for="email">Email</label>
+                        <input type="email" name="email input" placeholder="Email" id="email">
+                    </div>
+                    <div class="floated-label-wrapper">
+                        <label for="pass">Password</label>
+                        <input type="password" name="password input" placeholder="Password" id="password">
+                    </div>
+                    <input class="button expanded" type="submit" value="Login" id="loginButton">
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyC8WTQ2j_fFZaxfR-yh3HIxfWDSStT2GEc",
+            authDomain: "readventure-64ea7.firebaseapp.com",
+            databaseURL: "https://readventure-64ea7.firebaseio.com",
+            projectId: "readventure-64ea7",
+            storageBucket: "readventure-64ea7.appspot.com",
+            messagingSenderId: "137725170405"
+        };
+        firebase.initializeApp(config);
+    </script>
+
+    <script src="assets/js/vendor/jquery.js"></script>
+    <script src="assets/js/vendor/foundation.min.js"></script>
+
+    <script src="assets/js/ui.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>

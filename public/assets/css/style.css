@@ -1,3 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Architects+Daughter|Bowlby+One+SC|Fredoka+One|Prata|Short+Stack');
+
+/*Fonts
+
+font-family: 'Short Stack', cursive;
+font-family: 'Prata', serif;
+font-family: 'Fredoka One', cursive;
+font-family: 'Bowlby One SC', cursive;
+font-family: 'Architects Daughter', cursive;
+
+*/
+
+h1, h2 {
+  font-family: 'Fredoka One', cursive;
+}
+
+h3, h4 {
+  font-family: 'Bowlby One SC', cursive;
+}
+
+h5, h6 {
+  font-family: 'Prata', serif;
+}
+
+html, body {
+  width: 100%;
+  margin: 0px auto;
+  font-family: 'Architects Daughter', cursive;
+}
+
 #homeHeader, #registerHeader {
     margin-bottom: 10px;
 }
@@ -15,6 +45,15 @@
 
 .homeTitle {
     text-align: center;
+}
+
+.reveal {
+  max-height: 80vh;
+  z-index: 5000;
+}
+
+#userArea {
+  padding-top: 15px;
 }
 
 .menu-hover-lines {
@@ -91,37 +130,54 @@
     text-align: center;
 }
 
-/*Register form  */
-form .form-icons {
-  text-align: center;
+.floated-label-wrapper {
+  position: relative;
 }
 
-form .form-icons h4 {
-  margin-bottom: 1rem;
+.floated-label-wrapper label {
+  background: #fefefe;
+  color: #1779ba;
+  font-size: 0.75rem;
+  font-weight: 600;
+  left: 0.75rem;
+  opacity: 0;
+  padding: 0 0.25rem;
+  position: absolute;
+  top: 2rem;
+  transition: all 0.15s ease-in;
+  z-index: -1;
 }
 
-form .form-icons .input-group-label {
-  background-color: #30B3F4;
-  border-color: #30B3F4;
+.floated-label-wrapper label input[type=text],
+.floated-label-wrapper label input[type=email],
+.floated-label-wrapper label input[type=password] {
+  border-radius: 4px;
+  font-size: 1.75em;
+  padding: 0.5em;
 }
 
-form .form-icons .input-group-field {
-  border-color: #30B3F4;
+.floated-label-wrapper label.show {
+  opacity: 1;
+  top: -0.85rem;
+  z-index: 1;
+  transition: all 0.15s ease-in;
 }
 
-form .form-icons .fa {
-  color: white;
-  width: 1rem;
+/*Readventure Header  */
+#readventuresHeader {
+  height: 10vh;
 }
 
-/*Bookventure Header  */
+#readventuresHeader.modalHide {
+  display: none;
+}
 
 .overlay-nav-menu-toggle {
   position: relative;
   font-size: 4rem;
   z-index: 5000;
   color: #0a0a0a;
-  top: -1.5rem;
+  top: -0.5rem;
   left: 1.5rem;
   transition: all 0.4s ease-in-out;
 }
@@ -133,12 +189,13 @@ form .form-icons .fa {
 
 .overlay-nav-menu {
   position: absolute;
-  z-index: 1000;
+   z-index: 1000; 
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
   margin: 0;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -160,22 +217,22 @@ form .form-icons .fa {
 }
 
 .overlay-nav-menu li {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
+  border-bottom: 1px solid rgba(254, 254, 254, 0.5);
+  padding: 0.4rem;
 }
 
 .overlay-nav-menu a {
   display: inline-block;
   color: #fefefe;
   font-weight: bold;
-  height: 6.25rem;
-  line-height: 6.25rem;
-  border-bottom: 1px solid rgba(254, 254, 254, 0.5);
+  /* line-height: 6.25rem; */
   text-decoration: none;
 }
 
-.overlay-nav-menu a:hover {
-    font-size: 1.7rem;
-  color: #E4572E;
+.overlay-nav-menu li:hover {
+  background-color: rgba(254, 254, 254, 0.6);
+  color: #0a0a0a;
 }
 
 .overlay-nav-menu.is-open {
@@ -194,6 +251,10 @@ form .form-icons .fa {
   color: white;
 }
 
+#readventures.is-open {
+  display: none;
+}
+
 /*Search bar  */
 .input-group-rounded .input-group-field {
   border-radius: 5000px 0 0 5000px;
@@ -207,14 +268,43 @@ form .form-icons .fa {
   height:3.5rem;
 }
 
+
 /*readventures body */
+.avatar {
+  /* width: 1; */
+  cursor: pointer;
+}
+
+#readventureTools {
+  text-align: right;
+}
 
 #readventures {
     opacity: 0;
+    padding: 1rem;
+    /* max-height: 83vh; */
+    /* overflow-y: auto; */
 }
 
-/*book flip cards  */
- 
+/*Readventures Title  */
+#readventuresTitle {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: bold;
+  opacity: 0;
+}
+
+.readventureAuthor {
+   text-align: center; 
+}
+
+#readventureBookCover {
+  width: 70%;
+  margin: 0% 15%;
+  border: 3px solid #30B3F4;
+}
+
+/*book flip cards  */ 
 .bookCard {
     padding: 6px;
     cursor: pointer;
@@ -225,38 +315,38 @@ form .form-icons .fa {
 }
 
 .flip-card {
-   -webkit-perspective: 1000; 
-           perspective: 1000; 
+  -webkit-perspective: 1000; 
+  perspective: 1000;
 }
 
 .flip-card:hover .flip-card-inner,
 .flip-card.hover .flip-card-inner {
   -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
 .flip-card,
 .flip-card-inner-front,
 .flip-card-inner-back {
-   width: 100%; 
+   width: 100%;
 }
 
 .flip-card-inner {
-    transition: 0.6s;
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    position: relative;
-    min-height: 35vh;
+  transition: 0.6s;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  position: relative;
+  min-height: 15rem;
 }
 
 .flip-card-inner-front,
 .flip-card-inner-back {
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    min-height: 35vh;
-    position: absolute;  
-    top: 0vh;    
-    left: 0;  
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  min-height: 15rem; 
+  position: absolute;
+  top: 0vh;    
+  left: 0;  
 }
 
 .flip-card-inner-front {
@@ -271,13 +361,18 @@ form .form-icons .fa {
     justify-content: center;
 }
 
-.flip-card-inner-front h3 {
-    font-family: 'Limelight', cursive !important;
-    text-align: center;
+.flip-card-inner-front img {
+  border: 4px solid #30B3F4;
 }
 
-.flip-card-inner-front h4,h6 {
-    text-align: center;
+.flip-card-inner-back h4 {
+  font-size: 1rem;
+  text-align: center;
+}
+
+.flip-card-inner-back h5, h6 {
+  font-size: 0.9rem;
+  text-align: center;
 }
 
 .flip-card-inner-back {
@@ -297,7 +392,8 @@ form .form-icons .fa {
     flex-direction: column;
     text-align: center;
     background: #cacaca;
-    padding: 1rem; 
+    padding: 1rem;
+    overflow: auto
 }
 
 .flip-card-inner-back-title {
@@ -308,5 +404,55 @@ form .form-icons .fa {
   line-height: 1.3;
 }
  
+.readventureTools {
+  min-height: 15vh;
+}
+
+
+.menuIcon {
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+.menuIcon:hover {
+  font-size: 3.5rem;
+}
+
+/*bookmarkInput  */
+#bookmarkInput {
+  display: none;
+}
+
+#noteInput {
+  min-height: 20vh;
+}
+
+.plus-minus-input {
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.plus-minus-input .input-group-field {
+  text-align: center;
+  font-size: 7rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  padding: 1rem;
+  border: none;
+  box-shadow: none;
+}
+
+.plus-minus-input .input-group-field::-webkit-inner-spin-button,
+.plus-minus-input .input-group-field ::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+          appearance: none;
+}
+
+.plus-minus-input .input-group-button .circle {
+  border-radius: 50%;
+  padding: 0.25em 0.8em;
+}
+
 
 
