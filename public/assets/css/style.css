@@ -67,6 +67,45 @@ h5, h6 {
 .reveal {
   max-height: 80vh;
   z-index: 5000;
+  border: 2px solid gold;
+  background-color: #31393C;
+  color: white;
+}
+
+.reveal label {
+  color: white;
+}
+
+.reveal input[type="text"] {
+    background-color: #31393C;
+    color: white;
+    border-radius: 5px;
+    /* box-shadow: 0px 0px 5px white inset; */
+}
+
+.reveal input[type="text"]:focus {
+    background-color: #31393C;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px gold inset;
+}
+
+.reveal textarea {
+    background-color: #31393C;
+    color: white;
+    border-radius: 5px;
+    /* box-shadow: 0px 0px 5px white inset; */
+}
+
+.reveal textarea:focus {
+    background-color: #31393C;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px gold inset;
+}
+
+.reveal input[type='button'] {
+  background-color: #30B3F4;
 }
 
 .main {

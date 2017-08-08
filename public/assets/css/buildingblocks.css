@@ -289,6 +289,16 @@
 
 /*Bookmark input plus/minus block  */
 
+.input-group-field {
+    background-color: #31393C;
+    border: 1px solid gold;
+    color: white;
+}
+
+.input-group-field:focus {
+    background-color: #31393C;
+}
+
 .plus-minus-input .input-group-field {
   text-align: center;
   font-size: 7rem;
@@ -308,4 +318,6 @@
 .plus-minus-input .input-group-button .circle {
   border-radius: 50%;
   padding: 0.25em 0.8em;
+  background-color: gold;
+  color: #31393C;
 }

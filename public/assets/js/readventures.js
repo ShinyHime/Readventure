@@ -299,7 +299,8 @@ function initBookventure() {
                 time: firebase.database.ServerValue.TIMESTAMP
             };
 
-            console.log(note);
+            $('#headerNav').toggleClass('modalHide');
+            $('#readventureToolButtons').toggleClass('modalHide');
 
             db.ref('/books/' + currentUser.uid + '/' + id + '/notes').push(note);
         });
@@ -357,7 +358,8 @@ function initBookventure() {
 
             db.ref('/books/' + currentUser.uid + '/' + id + '/currentPage').set(currentPageNumber);
 
-            $('#readventuresHeader').toggleClass('modalHide');
+            $('#headerNav').toggleClass('modalHide');
+            $('#readventureToolButtons').toggleClass('modalHide');
         });
 
         $('#bookmarkModalContent').html(bookmarkHolder);
