@@ -7,13 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="assets/css/vendor/foundation.min.css" rel="stylesheet">
   <link href="assets/css/vendor/foundation-icons/foundation-icons.css" rel="stylesheet">
+  <link href="assets/css/buildingblocks.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
 </head>
 
 <body>
-  <div class="grid-x grid-padding-y grid-padding-x header" id="readventuresHeader">
-    <div class="small-12 medium-5 cell">
-      <nav role="navigation">
+  <div class="grid-x grid-padding-y grid-padding-x align-justify header" id="readventuresHeader">
+    <div class="small-3 medium-1 cell">
+      <nav role="navigation" id="headerNav">
         <ul id="overlay-nav-menu" class="overlay-nav-menu">
           <li><a href="#" id="currentReadventuresButton">Current Readventures</a></li>
           <li><a href="#">Completed Readventures</a></li>
@@ -24,16 +25,7 @@
         <a data-toggle-menu class="overlay-nav-menu-toggle" href="#overlay-nav-menu"><i class="fi-plus" id="menuActionButton"></i></a>
         <a class="overlay-nav-menu-toggle" href="#"><i class="fi-arrow-left" id="menuBackButton" hidden></i></a>
     </div>
-
-    <!-- <form class="small-12 medium-7 cell" id="bookSearch">
-      <div class="input-group input-group-rounded">
-        <input class="input-group-field" type="search" placeholder="Search for a new book..." id="bookInput">
-        <div class="input-group-button">
-          <input type="submit" class="button secondary" value="Search" id="bookSearchButton">
-        </div>
-      </div>
-    </form> -->
-    <div class="small-12 medium-7 cell" id="readventureToolButtons">
+    <div class="small-9 medium-7 cell" id="readventureToolButtons">
     </div>
   </div>
   </nav>
@@ -87,11 +79,11 @@
 
   <!--Main game content area -->
 
-  <div class="grid-container main">
-    <div class="grid-x">
+  <div class="main">
+    <div class="grid-x grid-margin-x grid-margin-y">
       <!--Begin user content area  -->
-      <div class="small-12 medium-4 cell" id="userArea">
-        <div class="grid-x grid-padding-x align-center">
+      <div class="small-12 medium-5 cell block" id="userArea">
+        <div class="grid-x grid-padding-x align-right">
           <div class="small-5 cell">
             <img src="" alt="" class="avatar" id="userAvatar" data-toggle="chooseAvatarModal">
             <div class="large reveal" id="chooseAvatarModal" data-reveal>
@@ -113,10 +105,11 @@
               <button class="close-button modalClose" data-close aria-label="Close reveal" type="button"><span aria-hidden="true">&times;</span></button>
             </div>
           </div>
-          <div class="small-7">
-            <div class="grid-margin-y">
-              <div class="small-2" id="userLevel">
-                <h2>Level: </h2>
+          <div class="small-6">
+            <div class="grid-y grid-padding-y grid-frame align-center">
+              <div class="small-3 cell" id="userLevel">
+              </div>
+              <div class="small-3 cell" id="userPagesRead">
               </div>
               <div class="small-10" id="userTreasures">
 
@@ -125,11 +118,11 @@
           </div>
         </div>
       </div>
-      <div class="small-12 medium-8 cell">
+      <div class="small-12 medium-7 cell block">
         <!-- <h2 id="readventuresTitle"></h2> -->
         <div class="grid-x" id="readventures">
-          <div class="small-12 cell">
-            <div class="grid-x" id="readventureBookInfo"></div>
+          <div class="small-12 cell" id="readventureBook">
+            <!-- <div class="grid-x" id="readventureBookInfo"></div> -->
           </div>
         </div>
       </div>
@@ -156,6 +149,7 @@
   <script src="assets/js/ui.js"></script>
 
   <script src="assets/js/readventures.js"></script>
+  <script src="assets/js/game.js"></script>
 
   <script src="assets/js/app.js"></script>
 </body>

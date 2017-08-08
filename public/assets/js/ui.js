@@ -31,11 +31,13 @@ $('[data-toggle-menu]').on("click", function () {
 });
 
 $('#userAvatar').click(function () {
-  $('#readventuresHeader').toggleClass('modalHide');
+  $('#headerNav').toggleClass('modalHide');
+  $('#readventureToolButtons').toggleClass('modalHide');
 })
 
 $('.modalClose').click(function () {
-  $('#readventuresHeader').toggleClass('modalHide');
+  $('#headerNav').toggleClass('modalHide');
+  $('#readventureToolButtons').toggleClass('modalHide');
 })
 
 jQuery(document).ready(function () {
