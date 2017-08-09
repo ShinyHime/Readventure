@@ -24,6 +24,7 @@ html, body {
   width: 100%;
   margin: 0px auto;
   font-family: 'Architects Daughter', cursive;
+  background-color: rgba(49, 57, 60, 1); 
 }
 
 h1, h2 {
@@ -67,6 +68,7 @@ h5, h6 {
 }
 
 .reveal {
+  min-height: 40vh;
   max-height: 80vh;
   z-index: 5000;
   border: 2px solid gold;
@@ -80,45 +82,45 @@ h5, h6 {
 }
 
 .reveal input[type="text"] {
-    background-color: #31393C;
-    color: white;
-    border-radius: 5px;
-    /* box-shadow: 0px 0px 5px white inset; */
+  background-color: rgba(49, 57, 60, 0.2); 
+  color: white;
+  border-radius: 5px;
+  /* box-shadow: 0px 0px 5px white inset; */
 }
 
 .reveal input[type="text"]:focus {
-    background-color: #31393C;
-    color: white;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px gold inset;
+  background-color: rgba(49, 57, 60, 0.2); 
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px gold inset;
 }
 
 .reveal input[type="number"] {
-    background-color: #31393C;
-    color: white;
-    border-radius: 5px;
-    /* box-shadow: 0px 0px 5px white inset; */
+  background-color: rgba(49, 57, 60, 0.2); 
+  color: white;
+  border-radius: 5px;
+  /* box-shadow: 0px 0px 5px white inset; */
 }
 
 .reveal input[type="number"]:focus {
-    background-color: #31393C;
-    color: white;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px gold inset;
+  background-color: rgba(49, 57, 60, 0.2); 
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px gold inset;
 }
 
 .reveal textarea {
-    background-color: #31393C;
-    color: white;
-    border-radius: 5px;
-    /* box-shadow: 0px 0px 5px white inset; */
+  background-color: rgba(49, 57, 60, 0.2); 
+  color: white;
+  border-radius: 5px;
+  /* box-shadow: 0px 0px 5px white inset; */
 }
 
 .reveal textarea:focus {
-    background-color: #31393C;
-    color: white;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px gold inset;
+  background-color: rgba(49, 57, 60, 0.2); 
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px gold inset;
 }
 
 .reveal input[type='button'] {
@@ -171,6 +173,15 @@ h5, h6 {
   overflow-y: auto;
 }
 
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+
 .progress {
   height: 3vh;
   border: 2px solid gold;
@@ -198,6 +209,25 @@ h5, h6 {
 .note {
   border-bottom: 1px solid white;
   padding: 4px;
+  box-shadow: 0px 0px 18px black inset;
+}
+
+.definitionResult:hover {
+   background-color: #31393C;
+   cursor: pointer;
+   border-bottom: 2px solid gold;
+}
+
+.addDefinitionIcon {
+  font-size: 4vh;
+  color: gold;
+  text-align: right;
+  cursor: pointer;
+}
+
+.definition {
+  padding-top: 5px;
+  border-bottom: 1px solid white;
   box-shadow: 0px 0px 18px black inset;
 }
 

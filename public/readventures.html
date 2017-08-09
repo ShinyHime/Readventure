@@ -60,6 +60,25 @@
     <button class="close-button modalClose" data-close aria-label="Close reveal" type="button"><span aria-hidden="true">&times;</span></button>
   </div>
 
+  <!--Dictionary Modal  -->
+  <div class="large reveal" id="dictionaryModal" data-reveal>
+    <h2>Search for a word!</h2>
+    <div class="grid-x">
+      <form class="small-12 medium-7 cell" id="bookSearch">
+        <div class="input-group input-group-rounded">
+          <input class="input-group-field" type="search" placeholder="Enter your word..." id="wordInput">
+          <div class="input-group-button">
+            <input type="submit" class="button secondary" value="Search" id="wordSearchButton">
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="grid-x grid-margin-y align-right" id="definitionResults">
+
+    </div>
+    <button class="close-button modalClose" data-close aria-label="Close reveal" type="button"><span aria-hidden="true">&times;</span></button>
+  </div>
+
   <!--Take note modal  -->
   <div class="medium reveal" id="notesModal" data-reveal>
     <h2>Add a note!</h2>

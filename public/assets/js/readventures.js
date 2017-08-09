@@ -259,14 +259,16 @@ function initBookventure() {
         db.ref('/books/' + currentUser.uid + '/' + id + '/currentPage').on('value', function (currentPage) {
             var currentPageNumber = currentPage.val();
             var progress = currentPageNumber / pageCount * 100;
-            console.log(progress);
 
             $('#' + id + 'ProgressMeter').animate({
                 width: progress + '%'
             })
 
-            $('#' + id + 'ProgressRatio').html('<h5>' + currentPageNumber + ' / ' + pageCount + ' pages read</h5>');
-
+            if (currentPageNumber !== null) {
+                $('#' + id + 'ProgressRatio').html('<h5>' + currentPageNumber + ' / ' + pageCount + ' pages read</h5>');
+            } else {
+                $('#' + id + 'ProgressRatio').html('<h5>0 / ' + pageCount + ' pages read</h5>');
+            }
         })
     }
 
@@ -281,14 +283,15 @@ function initBookventure() {
         db.ref('/notes/' + '/' + currentUser.uid + '/' + id).on('child_added', function (child) {
             var note = child.toJSON();
 
-            notesHolder.append('<div class="small-2 note">p. ' + note.notePageNumber + '</div>');
-            notesHolder.append('<div class="small-10 note">' + note.note + '</div>');
+            notesHolder.append('<div class="small-2 cell note">p. ' + note.notePageNumber + '</div>');
+            notesHolder.append('<div class="small-10 cell note">' + note.note + '</div>');
         });
 
         $('#notesHolder').append(notesHolder);
     };
 
     function buildDefinitions(id) {
+        console.log(id)
         $('#definitionsHolder').empty();
 
         var definitionsHolder = $('<div>').addClass('grid-x grid-padding-x');
@@ -296,17 +299,29 @@ function initBookventure() {
 
         definitionsHolder.append(definitionsTitle);
 
-        // db.ref('/books/' + '/' + currentUser.uid + '/' + id + '/definitions').on('child_added', function (child) {
-        //     var definition = child.toJSON();
+        db.ref('/definitions/' + currentUser.uid + '/' + id).on('child_added', function(definition) {
+            var definitionInfo = definition.toJSON();
 
-        //     definitionsHolder.append('<div class="small-12 note">' + definition.definition + '</div>');
-        // });
+            var word = definitionInfo.headword;
+            var definitionText;
+
+            if (definition.val().definition.constructor === Array) {
+                console.log('is array');
+                definitionText = definitionInfo.definition[0];
+            } else {
+                definitionText = definitionInfo.definition;
+            };
+
+            definitionsHolder.append('<div class="small-3 cell definition"><h6>' + word + '</h6></div>');
+            definitionsHolder.append('<div class="small-9 cell definition"><p>' + definitionText + '</p></div>');
+
+            console.log(definitionText);
+        })
 
         $('#definitionsHolder').append(definitionsHolder);
     };
 
     function buildTreasures(id) {
-        console.log('treasures');
         $('#treasuresHolder').empty();
 
         var treasuresHolder = $('<div>').addClass('grid-x grid-padding-x');
@@ -341,7 +356,12 @@ function initBookventure() {
                 $('#readventureToolButtons').toggleClass('modalHide');
             });
 
-        dictionary.append(dictionaryButton);
+        dictionary.append(dictionaryButton)
+            .click(function () {
+                lookupWord(id);
+                $('#headerNav').toggleClass('modalHide');
+                $('#readventureToolButtons').toggleClass('modalHide');
+            });
 
         notes.append(notesButton)
             .click(function () {
@@ -359,11 +379,58 @@ function initBookventure() {
         $('#readventureToolButtons').append(readventureTools);
     };
 
-    //FOR DICTIONARY API
-    // $('#dictionaryButton').click(function (event) {
-    function lookupWord() {
-        var apiCreds = '48941ca8';
-        var queryURL = 'https://od-api.oxforddictionaries.com/api/v1&app_id=4891ca8'
+    function lookupWord(id) {
+
+        // var resultsHolder = $('<div>').addClass('')
+        //FOR DICTIONARY API
+        $('#wordSearchButton').click(function (event) {
+            //Prevents form html from refreshing the page
+            event.preventDefault();
+            //store input from field in a variable
+            var word = $('#wordInput').val().trim();
+            var consumKey = "wodBpJEGUaO5dYmvVRBIZcKvhHLABxrK";
+            var queryURL = "https://api.pearson.com//v2/dictionaries/entries?headword=" + word.toLowerCase() + "&limit=3&apikey=" + consumKey;
+            $.ajax({
+                url: queryURL,
+                method: "GET",
+                type: "JSON",
+            }).done(function (response) {
+                // console.log(response);
+                $.each(response.results, function (index, word) {
+                    // console.log(word);
+                    var wordDef = {
+                        headword: word.headword,
+                        partofspeech: word.part_of_speech,
+                        definition: word.senses[0].definition
+                    }
+                    console.log(wordDef.definition);
+
+                    var definitionResult = $('<div>').addClass('small-12 cell definitionResult');
+                    var definitionHolder = $('<div>').addClass('grid-x');
+                    var definitionWord = $('<div>').addClass('small-2 cell');
+                    var definitionText = $('<div>').addClass('small-9 cell');
+                    var definitionAddButton = $('<div>').addClass('small-1 cell').html('<i class="fi-plus addDefinitionIcon"></i>');
+
+                    if (wordDef.definition !== undefined) {
+                        // $('#definitionResults').append('<div class="small-10 cell definitionResult"><p>' + wordDef.definition + '  <i class="fi-plus addDefinitionIcon"></i></p></div>')
+                        definitionWord.html('<h6>' + wordDef.headword + '</h6>');
+                        definitionText.html('<p>' + wordDef.definition + '</p>');
+
+                        definitionHolder.append(definitionWord)
+                            .append(definitionText)
+                            .append(definitionAddButton);
+
+                        definitionResult.append(definitionHolder);
+                            
+                        $('#definitionResults').append(definitionResult);
+
+                        definitionResult.click(function() {
+                            db.ref('/definitions/' + currentUser.uid + '/' + id).push(wordDef);
+                        })
+                    }
+                })
+            })
+        })
     };
 
     function takeNote(id) {
