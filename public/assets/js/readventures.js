@@ -283,8 +283,8 @@ function initBookventure() {
         db.ref('/notes/' + '/' + currentUser.uid + '/' + id).on('child_added', function (child) {
             var note = child.toJSON();
 
-            notesHolder.append('<div class="small-2 cell note">p. ' + note.notePageNumber + '</div>');
-            notesHolder.append('<div class="small-10 cell note">' + note.note + '</div>');
+            notesHolder.append('<div class="small-3 cell note">p. ' + note.notePageNumber + '</div>');
+            notesHolder.append('<div class="small-9 cell note">' + note.note + '</div>');
         });
 
         $('#notesHolder').append(notesHolder);

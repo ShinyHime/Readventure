@@ -12,4 +12,10 @@
     .menuIcon {
         font-size: 7.5vh;
     }
+}
+
+@media only screen and (max-width: 1000px) {
+    #currentLevelNumber, #totalPages {
+        font-size: 1.2rem;
+    }
 } 
