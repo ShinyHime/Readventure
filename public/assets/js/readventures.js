@@ -168,13 +168,18 @@ function initBookventure() {
 
         $('#readventures').empty();
 
+
         db.ref('/books/' + currentUser.uid).on('child_added', function (book) {
+
 
             var bookInfo = book.toJSON();
 
             displayBook(bookInfo, action);
 
+
         })
+
+
     };
 
     function startReadventure(bookInfo) {
@@ -221,9 +226,9 @@ function initBookventure() {
 
     function buildReadventureBook(bookInfo) {
 
-        var bookInfoHolder = $('<div>').addClass('grid-x grid-padding-x grid-margin-y');
-        var bookCover = $('<div>').addClass('small-4 cell').html('<img src="' + bookInfo.cover + '" id="readventureBookCover">');
-        var bookDetails = $('<div>').addClass('small-8 cell readventureBookDetails');
+        var bookInfoHolder = $('<div>').addClass('grid-x grid-padding-x grid-margin-y align-center');
+        var bookCover = $('<div>').addClass('small-6 medium-4 large-4 cell').html('<img src="' + bookInfo.cover + '" id="readventureBookCover">');
+        var bookDetails = $('<div>').addClass('small-12 medium-12 large-8 cell readventureBookDetails');
         var bookTitle = $('<h3>');
         var bookAuthor = $('<h5>');
         var bookProgressBar = $('<div>').addClass('progress');
@@ -305,7 +310,7 @@ function initBookventure() {
         $('#treasuresHolder').empty();
 
         var treasuresHolder = $('<div>').addClass('grid-x grid-padding-x');
-        var treasuresTitle = $('<div>').addClass('small-12 cell readventureInfoTitle').html('<h3>My Treasures</h3>');
+        var treasuresTitle = $('<div>').addClass('small-12 cell readventureInfoTitle').html('<h3>Treasure</h3>');
 
         treasuresHolder.append(treasuresTitle);
 
@@ -322,12 +327,12 @@ function initBookventure() {
         var tools = $('<div>').addClass('small-12 medium-5 cell');
         var readventureTools = $('<div>').addClass('grid-x grid-margin-y align-right');
 
-        var bookmark = $('<div>').addClass('small-3 medium-2 cell readventureTools');
-        var bookmarkButton = $('<i class="fi-book-bookmark menuIcon" id="menuBookmarkButton" data-toggle="bookmarkModal"></i>');
-        var dictionary = $('<div>').addClass('small-3 medium-2 cell readventureTools');
-        var dictionaryButton = $('<i class="fi-quote menuIcon" id="menuDictionaryButton" data-toggle="dictionaryModal"></i>');
-        var notes = $('<div>').addClass('small-3 medium-2 cell readventureTools');
-        var notesButton = $('<i class="fi-page-edit menuIcon" id="menuNotesButton" data-toggle="notesModal"></i>');
+        var bookmark = $('<div>').addClass('small-3 medium-2 cell readventureTools').attr('data-toggle', 'bookmarkModal');
+        var bookmarkButton = $('<i class="fi-book-bookmark menuIcon" id="menuBookmarkButton"></i>');
+        var dictionary = $('<div>').addClass('small-3 medium-2 cell readventureTools').attr('data-toggle', 'dictionaryModal');
+        var dictionaryButton = $('<i class="fi-quote menuIcon" id="menuDictionaryButton"></i>');
+        var notes = $('<div>').addClass('small-3 medium-2 cell readventureTools').attr('data-toggle', 'notesModal');
+        var notesButton = $('<i class="fi-page-edit menuIcon" id="menuNotesButton"></i>');
 
         bookmark.append(bookmarkButton)
             .click(function () {
@@ -429,14 +434,20 @@ function initBookventure() {
                 var previousPageNumber = currentPage.val();
                 var newPageNumber = parseInt($('#currentPageNumber').val().trim());
 
-                newPageNumber -= previousPageNumber;
+                db.ref('/books/' + currentUser.uid + '/' + id + '/pageCount').once('value', function (pageCount) {
+                    var pageCount = pageCount.val();
 
-                // console.log(newPageNumber);
+                    if (newPageNumber <= pageCount) {
+                        newPageNumber -= previousPageNumber;
 
-                updateUserPagesRead(previousPageNumber, newPageNumber);
+                        updateUserPagesRead(previousPageNumber, newPageNumber);
+
+                        db.ref('/books/' + currentUser.uid + '/' + id + '/currentPage').set(currentPageNumber);
+                    } else {
+                        alert('This book does not have that many pages!')
+                    }
+                })
             })
-
-            db.ref('/books/' + currentUser.uid + '/' + id + '/currentPage').set(currentPageNumber);
 
             $('#headerNav').toggleClass('modalHide');
             $('#readventureToolButtons').toggleClass('modalHide');
@@ -498,13 +509,22 @@ function initBookventure() {
     }
 
     db.ref('/users/' + currentUser.uid + '/pagesRead').on('value', function (pagesRead) {
-        $('#userPagesRead').html('<h5><span id="totalPages"> <i class="fi-book"> </i>' + pagesRead.val() + ' points</span></h5>')
+        if (pagesRead.val() !== null) {
+            $('#userPagesRead').html('<h5><span id="totalPages"> <i class="fi-book"> </i>' + pagesRead.val() + ' points</span></h5>')
+        } else {
+            $('#userPagesRead').html('<h5><span id="totalPages"> <i class="fi-book"> </i>0 points</span></h5>')
+        }
     })
 
     $('#currentReadventuresButton').click(function () {
         displayUserReadventures();
         $("#overlay-nav-menu").toggleClass("is-open");
         $('#readventures').toggleClass('is-open');
+    });
+
+    $('.menuIcon').click(function () {
+        $('#headerNav').toggleClass('modalHide');
+        $('#readventureToolButtons').toggleClass('modalHide');
     });
 
     $(document).ready(function () {

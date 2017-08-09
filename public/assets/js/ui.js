@@ -30,6 +30,7 @@ $('[data-toggle-menu]').on("click", function () {
   $('#readventures').toggleClass('is-open');
 });
 
+
 $('#userAvatar').click(function () {
   $('#headerNav').toggleClass('modalHide');
   $('#readventureToolButtons').toggleClass('modalHide');

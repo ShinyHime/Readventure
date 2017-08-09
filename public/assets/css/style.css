@@ -150,10 +150,10 @@ h5, h6 {
   max-height: 50vh;
 }
 
-.userDetails {
-   /* border-bottom: 1px solid rgba(138, 84, 260, 0.7);  */
+#addInstructions {
+  color: white;
+  display: block;
 }
-
 #totalPages, #currentLevelNumber {
   font-family: 'Fredoka One', cursive;
   font-size: 2rem;

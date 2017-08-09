@@ -323,3 +323,34 @@
   background-color: gold;
   color: #31393C;
 }
+
+/*Menu icon pulse  */
+#menuActionButton.pulse {
+    animation: pulse 2s infinite;
+}
+#menuActionButton.pulse:hover {
+  animation: none;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    color: gold;
+  }
+  70% {
+      color: white;
+  }
+  100% {
+      color: white;
+  }
+}
+@keyframes pulse {
+  0% {
+    color: gold;
+  }
+  70% {
+      color: white;
+  }
+  100% {
+      color: white;
+  }
+}

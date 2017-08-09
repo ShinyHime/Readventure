@@ -41,17 +41,7 @@ firebase.auth().onAuthStateChanged(function (user) {
                 milestone = (currentLevel * currentLevel) * 3
         }
 
-        console.log('Next level achieved after ' + milestone + ' pages read.');
-
-        var levelProgressBar = $('<div>').addClass('progress');
-        var levelProgressMeter = $('<div>').addClass('progress-meter').attr('id', 'userProgressMeter');
-        var levelProgressRatio = $('<div>').addClass('progressRatio').attr('id', 'userProgressRatio');
-
-        levelProgressBar.html(levelProgressMeter);
-
-        $('#userProgress').append(levelProgressBar)
-            .append(levelProgressRatio);
-
+        userProgress(milestone);
 
         db.ref('/users/' + currentUser.uid + '/pagesRead').on('value', function (pagesRead) {
             var pageCount = pagesRead.val();
@@ -62,16 +52,34 @@ firebase.auth().onAuthStateChanged(function (user) {
             }
 
             db.ref('/users/' + currentUser.uid + '/level').set(currentLevel);
+        })
+    }
 
-            var levelProgress = pageCount / milestone * 100;
+    function userProgress(milestone) {
 
-            console.log(levelProgress);
+        console.log('Next level achieved after ' + milestone + ' pages read.');
+
+        db.ref('/users/' + currentUser.uid + '/pagesRead').on('value', function (pages) {
+            var pagesRead = pages.val();
+
+            var levelProgressBar = $('<div>').addClass('progress');
+            var levelProgressMeter = $('<div>').addClass('progress-meter').attr('id', 'userProgressMeter');
+            var levelProgressRatio = $('<div>').addClass('progressRatio').attr('id', 'userProgressRatio');
+
+            levelProgressBar.empty();
+
+            levelProgressBar.html(levelProgressMeter);
+
+            $('#userProgress').html(levelProgressBar)
+                .append(levelProgressRatio);
+
+            var levelProgress = pagesRead / milestone * 100;
 
             $('#userProgressMeter').animate({
                 width: levelProgress + '%'
             });
 
-            var pagesLeft = milestone -= pageCount;
+            var pagesLeft = milestone -= pagesRead;
 
             $('#userProgressRatio').html('<h5>Read ' + pagesLeft + ' more pages to level up!</h5>');
 
@@ -82,7 +90,5 @@ firebase.auth().onAuthStateChanged(function (user) {
         var currentLevel = level.val();
         $('#userLevel').html('<h5><span id="currentLevelNumber"><i class="fi-sheriff-badge"> </i>LEVEL ' + currentLevel + '</span></h5>');
     })
-
-
 
 })
