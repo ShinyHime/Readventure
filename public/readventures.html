@@ -9,20 +9,21 @@
   <link href="assets/css/vendor/foundation-icons/foundation-icons.css" rel="stylesheet">
   <link href="assets/css/buildingblocks.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/mobileType.css" rel="stylesheet">
 </head>
 
 <body>
   <div class="grid-x grid-padding-y grid-padding-x align-justify header" id="readventuresHeader">
-    <div class="small-3 medium-1 cell">
+    <div class="small-3 medium-3 cell">
       <nav role="navigation" id="headerNav">
         <ul id="overlay-nav-menu" class="overlay-nav-menu">
-          <li><a href="#" id="currentReadventuresButton">Current Readventures</a></li>
-          <li><a href="#">Completed Readventures</a></li>
+          <!-- <li><a href="#" id="currentReadventuresButton">Current Readventures</a></li> -->
+          <!-- <li><a href="#">Completed Readventures</a></li> -->
           <li><a href="#" data-toggle="searchModal">Find a new Readventure</a></li>
           <li><a href="#" id="logoutButton">Logout</a></li>
         </ul>
 
-        <a data-toggle-menu class="overlay-nav-menu-toggle" href="#overlay-nav-menu"><i class="fi-plus" id="menuActionButton"></i></a>
+        <a data-toggle-menu class="overlay-nav-menu-toggle" href="#overlay-nav-menu"><i class="fi-compass" id="menuActionButton"></i></a>
         <a class="overlay-nav-menu-toggle" href="#"><i class="fi-arrow-left" id="menuBackButton" hidden></i></a>
     </div>
     <div class="small-9 medium-7 cell" id="readventureToolButtons">
@@ -67,7 +68,7 @@
         <label>Note Title<input type="text" placeholder="New Note" id="noteTitle"></label>
       </div>
       <div class="medium-6 cell">
-        <label>Page Number (optional)<input type="text" placeholder="214" id="notePageNumber"></label>
+        <label>Page Number<input type="number" placeholder="Enter Page Number" id="notePageNumber"></label>
       </div>
       <div class="medium-12 cell">
         <textarea type="text" placeholder="Add a new note here..." id="noteInput"></textarea>
@@ -80,11 +81,11 @@
   <!--Main game content area -->
 
   <div class="main">
-    <div class="grid-x grid-margin-x grid-margin-y">
+    <div class="grid-x grid-margin-y grid-margin-x">
       <!--Begin user content area  -->
       <div class="small-12 medium-5 cell block" id="userArea">
-        <div class="grid-x grid-padding-x align-right">
-          <div class="small-5 cell">
+        <div class="grid-x align-center">
+          <div class="small-4 cell">
             <img src="" alt="" class="avatar" id="userAvatar" data-toggle="chooseAvatarModal">
             <div class="large reveal" id="chooseAvatarModal" data-reveal>
               <h1>Choose your avatar!</h1>
@@ -105,16 +106,16 @@
               <button class="close-button modalClose" data-close aria-label="Close reveal" type="button"><span aria-hidden="true">&times;</span></button>
             </div>
           </div>
-          <div class="small-6">
+          <div class="small-6 cell">
             <div class="grid-y grid-padding-y grid-frame align-center">
-              <div class="small-3 cell" id="userLevel">
+              <div class="small-6 cell userDetails" id="userLevel">
               </div>
-              <div class="small-3 cell" id="userPagesRead">
-              </div>
-              <div class="small-10" id="userTreasures">
-
+              <div class="small-6 cell userDetails" id="userPagesRead">
               </div>
             </div>
+          </div>
+          <div class="small-10 cell" id="userProgress">
+
           </div>
         </div>
       </div>
@@ -125,6 +126,17 @@
             <!-- <div class="grid-x" id="readventureBookInfo"></div> -->
           </div>
         </div>
+      </div>
+      <div class="small-12 medium-4 cell block readventureInfo" id="notesHolder" hidden>
+        <h1>My Notes</h1>
+      </div>
+
+      <div class="small-12 medium-4 cell block readventureInfo" id="definitionsHolder" hidden>
+        <h1>My Words</h1>
+      </div>
+
+      <div class="small-12 medium-4 cell block readventureInfo" id="treasuresHolder" hidden>
+        <h1>My Treasures</h1>
       </div>
     </div>
   </div>

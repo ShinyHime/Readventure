@@ -43,6 +43,16 @@ firebase.auth().onAuthStateChanged(function (user) {
 
         console.log('Next level achieved after ' + milestone + ' pages read.');
 
+        var levelProgressBar = $('<div>').addClass('progress');
+        var levelProgressMeter = $('<div>').addClass('progress-meter').attr('id', 'userProgressMeter');
+        var levelProgressRatio = $('<div>').addClass('progressRatio').attr('id', 'userProgressRatio');
+
+        levelProgressBar.html(levelProgressMeter);
+
+        $('#userProgress').append(levelProgressBar)
+            .append(levelProgressRatio);
+
+
         db.ref('/users/' + currentUser.uid + '/pagesRead').on('value', function (pagesRead) {
             var pageCount = pagesRead.val();
 
@@ -52,12 +62,27 @@ firebase.auth().onAuthStateChanged(function (user) {
             }
 
             db.ref('/users/' + currentUser.uid + '/level').set(currentLevel);
+
+            var levelProgress = pageCount / milestone * 100;
+
+            console.log(levelProgress);
+
+            $('#userProgressMeter').animate({
+                width: levelProgress + '%'
+            });
+
+            var pagesLeft = milestone -= pageCount;
+
+            $('#userProgressRatio').html('<h5>Read ' + pagesLeft + ' more pages to level up!</h5>');
+
         })
     }
 
     db.ref('/users/' + currentUser.uid + '/level').on('value', function (level) {
         var currentLevel = level.val();
-        $('#userLevel').html('<h5>Level: <span id="currentLevelNumber">' + currentLevel + '</span></h5>');
+        $('#userLevel').html('<h5><span id="currentLevelNumber"><i class="fi-sheriff-badge"> </i>LEVEL ' + currentLevel + '</span></h5>');
     })
+
+
 
 })

@@ -46,7 +46,9 @@ h5, h6 {
 #readventuresHeader {
   height: 10vh;
   background-color: #30B3F4;
+  background: linear-gradient(#0a5c84, #30B3F4, #207ead);
   margin-bottom: 10px;
+  border-bottom: 3px solid #31393C;
 }
 
 #homeBanner {
@@ -68,7 +70,8 @@ h5, h6 {
   max-height: 80vh;
   z-index: 5000;
   border: 2px solid gold;
-  background-color: #31393C;
+  /* background-color: #31393C; */
+  background-color: rgba(49, 57, 60, 0.9); 
   color: white;
 }
 
@@ -84,6 +87,20 @@ h5, h6 {
 }
 
 .reveal input[type="text"]:focus {
+    background-color: #31393C;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px gold inset;
+}
+
+.reveal input[type="number"] {
+    background-color: #31393C;
+    color: white;
+    border-radius: 5px;
+    /* box-shadow: 0px 0px 5px white inset; */
+}
+
+.reveal input[type="number"]:focus {
     background-color: #31393C;
     color: white;
     border-radius: 5px;
@@ -109,32 +126,79 @@ h5, h6 {
 }
 
 .main {
-  width: 100%;
+  max-width: 100%;
+  padding: 0vh 2vh;
   /* background-color: rgba(33, 209, 83, 0.7); */
+  background-image: url('http://wallpapercave.com/wp/VekkqCp.jpg');
   background-color: #31393C;
-  min-height: 90vh;  
+  min-height: 90vh;
 }
 
 .block {
   color: white;
-  border: 2px solid gold;
+  border: 4px solid gold;
   border-radius: 5px;
   transition: all 0.4s ease-in-out;
-  background-color: rgba(138, 84, 260, 0.5); 
-  box-shadow: 0px 0px 15px white inset;
+   background-color: rgba(49, 57, 60, 0.7); 
+   /* box-shadow: 0px 0px 25px white inset;  */
+   box-shadow: 0px 0px 35px black inset; 
 }
 
 #userArea {
   padding-top: 15px;
-  color: white;
-     text-shadow: 1px 1px 8px #31393C;  
+  text-shadow: 1px 1px 8px #31393C;
+  max-height: 50vh;
+}
+
+.userDetails {
+   /* border-bottom: 1px solid rgba(138, 84, 260, 0.7);  */
 }
 
 #totalPages, #currentLevelNumber {
-font-family: 'Fredoka One', cursive;
+  font-family: 'Fredoka One', cursive;
   font-size: 2rem;
   color: white;
-   text-shadow: 1px 1px 8px #31393C;  
+  text-shadow: 0px 0px 15px black;  
+}
+
+#readventures {
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.readventureInfo {
+  max-height: 40vh;
+  overflow-y: auto;
+}
+
+.progress {
+  height: 3vh;
+  border: 2px solid gold;
+  border-radius: 2px;
+  background-color: rgba(198, 82, 21, 0.4); 
+  box-shadow: 0px 0px 18px black inset;
+}
+
+.progress-meter {
+  background-color: #15c624;
+  border-right: 1px solid goldenrod;
+}
+
+.progressRatio h5 {
+  font-style: italic;
+}
+
+.readventureInfoTitle {
+  background-color: rgba(14, 133, 178, 0.5);
+  text-align: center;
+  border-bottom: 3px solid gold;
+  text-shadow: 0px 0px 15px black;  
+}
+
+.note {
+  border-bottom: 1px solid white;
+  padding: 4px;
+  box-shadow: 0px 0px 18px black inset;
 }
 
 #articles img {
@@ -195,7 +259,7 @@ font-family: 'Fredoka One', cursive;
   width: 70%;
   margin: 0% 15%;
   border: 5px solid white;
-  box-shadow: 0px 0px 15px #31393C;
+  box-shadow: 0px 0px 15px gold;
 }
 
 /*book flip cards  */ 

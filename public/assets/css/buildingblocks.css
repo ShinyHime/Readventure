@@ -139,7 +139,7 @@
 }
 
 .overlay-nav-menu li {
-  font-size: 1.3rem;
+  font-size: 3rem;
   border-bottom: 1px solid rgba(254, 254, 254, 0.5);
   padding: 0.4rem;
 }
@@ -238,17 +238,19 @@
 
 .flip-card-inner-front img {
   border: 3px solid white;
-  box-shadow: 0px 0px 18px #31393C;
+  box-shadow: 0px 0px 18px gold;
 }
 
 .flip-card-inner-back h4 {
+    color: white;
   font-size: 1rem;
   text-align: center;
 }
 
 .flip-card-inner-back h5, h6 {
-  font-size: 0.9rem;
-  text-align: center;
+    color: white;
+    font-size: 0.9rem;
+    text-align: center;
 }
 
 .flip-card-inner-back {

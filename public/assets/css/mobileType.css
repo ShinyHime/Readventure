@@ -1,0 +1,15 @@
+@media only screen and (max-width: 670px) {
+    .block h3 {
+        font-size: 1rem;
+    }
+
+    #currentLevelNumber, #totalPages {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 448px) {
+    .menuIcon {
+        font-size: 7.5vh;
+    }
+} 
