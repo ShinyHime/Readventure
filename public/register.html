@@ -26,74 +26,34 @@
 
     <script src="https://cdn.firebase.com/libs/firebaseui/2.3.0/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.3.0/firebaseui.css" />
-    <!-- <script type="text/javascript">
-        // FirebaseUI config.
-        var uiConfig = {
-            signInSuccessUrl: 'readventures.html',
-            signInOptions: [
-                // Leave the lines as is for the providers you want to offer your users.
-                firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-                firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-                // firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-                // firebase.auth.GithubAuthProvider.PROVIDER_ID,
-                // firebase.auth.EmailAuthProvider.PROVIDER_ID,
-                // firebase.auth.PhoneAuthProvider.PROVIDER_ID
-            ],
-            // Terms of service url.
-            // tosUrl: '<your-tos-url>'
-        };
-
-        // Initialize the FirebaseUI Widget using Firebase.
-        var ui = new firebaseui.auth.AuthUI(firebase.auth());
-        // The start method will wait until the DOM is loaded.
-        ui.start('#firebaseui-auth-container', uiConfig);
-    </script>
-</head> -->
 
     <body id="register">
-        <div class="grid-container" id="registerHeader">
+        <div id="registerHeader">
             <ul class="menu menu-hover-lines">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Our Team</a></li>
+                <!-- <li><a href="#">About</a></li>
+                <li><a href="#">Our Team</a></li> -->
                 <li class="active"><a href="register.html">Sign Up</a></li>
                 <li><a href="login.html">Login</a></li>
             </ul>
         </div>
-
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
-
-        <!-- <div class="grid-container grid-container-padding">
-        <div class="grid-x">
-            <div class="small-12 cell">
-                <div id="firebaseui-auth-container"></div>
-            </div>
-        </div>
-    </div> -->
-
-        <div class="grid-container">
-            <div class="grid-x grid-padding-y align-center">
+        <div>
+            <div class="grid-y grid-frame grid-padding-y align-center">
                 <div class="small-12 medium-7">
-                    <form class="callout text-center">
-                        <h2>Become A Readventurer!</h2>
-                        <!-- <div class="floated-label-wrapper">
-                        <label for="full-name">First Lame</label>
-                        <input type="text" name="first name input" placeholder="First name" id="newUserFirstName">
+                    <div class="grid-x align-center">
+                        <form class="small-12 medium-8 cell block callout text-center">
+                            <h2>Become A Readventurer!</h2>
+                            <div class="floated-label-wrapper">
+                                <label for="email">Email</label>
+                                <input type="email" name="email input" placeholder="Email" id="newUserEmail">
+                            </div>
+                            <div class="floated-label-wrapper">
+                                <label for="pass">Password</label>
+                                <input type="password" name="password input" placeholder="Password" id="newUserPassword">
+                            </div>
+                            <input class="button expanded" type="submit" value="Sign up" id="registerButton">
+                        </form>
                     </div>
-                    <div class="floated-label-wrapper">
-                        <label for="full-name">Last Lame</label>
-                        <input type="text" name="last name input" placeholder="Last name" id="newUserLastName">
-                    </div> -->
-                        <div class="floated-label-wrapper">
-                            <label for="email">Email</label>
-                            <input type="email" name="email input" placeholder="Email" id="newUserEmail">
-                        </div>
-                        <div class="floated-label-wrapper">
-                            <label for="pass">Password</label>
-                            <input type="password" name="password input" placeholder="Password" id="newUserPassword">
-                        </div>
-                        <input class="button expanded" type="submit" value="Sign up" id="registerButton">
-                    </form>
                 </div>
             </div>
         </div>

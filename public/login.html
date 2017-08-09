@@ -13,36 +13,35 @@
 </head>
 
 <body id="register">
-    <div class="grid-container" id="registerHeader">
+    <div id="registerHeader">
         <ul class="menu menu-hover-lines">
             <li><a href="index.html">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Our Team</a></li>
+            <!-- <li><a href="#">About</a></li>
+            <li><a href="#">Our Team</a></li> -->
             <li><a href="register.html">Sign Up</a></li>
             <li class="active"><a href="login.html">Login</a></li>
         </ul>
     </div>
-
-    <div class="grid-container">
-        <div class="grid-x grid-padding-y align-center">
+    <div>
+        <div class="grid-y grid-frame grid-padding-y align-center">
             <div class="small-12 medium-7">
-                <form class="callout text-center">
-                    <h2>Login</h2>
-                    <div class="floated-label-wrapper">
-                        <label for="email">Email</label>
-                        <input type="email" name="email input" placeholder="Email" id="email">
-                    </div>
-                    <div class="floated-label-wrapper">
-                        <label for="pass">Password</label>
-                        <input type="password" name="password input" placeholder="Password" id="password">
-                    </div>
-                    <input class="button expanded" type="submit" value="Login" id="loginButton">
-                </form>
+                <div class="grid-x align-center">
+                    <form class="small-12 medium-8 cell block callout text-center">
+                        <h2>Login</h2>
+                        <div class="floated-label-wrapper">
+                            <label for="email">Email</label>
+                            <input type="email" name="email input" placeholder="Email" id="email">
+                        </div>
+                        <div class="floated-label-wrapper">
+                            <label for="pass">Password</label>
+                            <input type="password" name="password input" placeholder="Password" id="password">
+                        </div>
+                        <input class="button expanded" type="submit" value="Login" id="loginButton">
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-
-
     <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
     <script>
         // Initialize Firebase

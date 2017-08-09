@@ -12,144 +12,176 @@
 </head>
 
 <body id="home">
-  <div class="grid-container" id="homeHeader">
+  <div id="homeHeader">
     <ul class="menu menu-hover-lines">
       <li class="active"><a href="#">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#team">Our Team</a></li>
-      <li><a href="register.html">Sign Up</a></li>
-      <li><a href="login.html">Login</a></li>
+      <!-- <li><a href="register.html">Sign Up</a></li>
+      <li><a href="login.html">Login</a></li> -->
     </ul>
   </div>
-  <div class="small-12 cell" id="homeBanner">
-    <img src="assets/images/READVENTURE_logo.png" alt="main article image" id="bannerLogo">
-  </div>
 
-  <div class="grid-container" id="mainHome">
-    <!--rachel Tuesday entries start-->
-    <!--Main logo and articles area  -->
-    <div class="grid-x grid-margin-x grid-margin-y align-center" id="about">
-      <!--About Section  -->
-      <div class="small-12 cell">
-        <div class="small-12 homeTitle">
-          <h1>About Readventure</h1>
-        </div>
-        <div class="grid-y grid-margin-y grid-margin-x" id="articles">
-          <div class="cell">
-            <div class="grid-x grid-margin-x">
-              <div class="small-12 medium-12 large-5 cell">
-                <img src="https://placehold.it/400x200&amp;text=Other cool article" alt="article promo image">
-              </div>
-              <div class="small-12 medium-12 large-7 cell">
-                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin
-                  literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney
-                  College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage,
-                  and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem
-                  Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good
-                  and Evil) by Cicero, written in 45 BC.
-                </p>
-              </div>
-            </div>
+  <div id="mainHome">
+    <div class="grid-x grid-margin-y align-center">
+      <!--Banner  -->
+      <div class="small-12 cell" id="homeBanner">
+        <div class="grid-x grid-padding-x grid-margin-y align-center">
+          <div class="small-12 medium-6 cell">
+            <img src="assets/images/READVENTURE_logo.png" alt="main article image" id="bannerLogo">
           </div>
-          <div class="cell">
-            <div class="grid-x grid-margin-x">
-              <div class="small-12 medium-12 large-5 cell">
-                <img src="https://placehold.it/400x200&amp;text=Other cool article" alt="article promo image">
+          <div class="small-8 medium-6 cell">
+            <div class="grid-y grid-frame align-center">
+              <div class="small-4 medium-2">
+                <h2>GAME INTO READING!</h2>
               </div>
-              <div class="small-12 medium-12 large-7 cell">
-                <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections
-                  1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original
-                  form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
+              <div class="small-4 medium-2">
+                <a href="login.html"><button class="button" type="submit">Log In</button></a>
+              </div>
+              <div class="small-4 medium-2">
+                <a href="register.html"><button class="button" type="submit">Sign Up</button></a>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="grid-x" id="team">
-        <div class="small-12 cell homeTitle">
-          <h1>Our Team</h1>
+      <!--About  -->
+      <div class="small-12 cell" id="about">
+        <div class="grid-x grid-padding-x grid-margin-y">
+          <!--Avatars and play description  -->
+          <div class="small-12 medium-6 cell">
+            <div class="grid-y grid-frame align-center">
+              <div class="small-10">
+                <h1>Choose a Readventurer!</h1>
+                <p>Every user gets to choose their own Readventurer avatar. As you earn points and achievements from reading
+                  the books you love, you can upgrade your Readventurer's stats and gear!</p>
+              </div>
+            </div>
+          </div>
+          <!--Avatars  -->
+          <div class="small-12 medium-6 cell">
+            <div class="grid-x">
+              <div class="small-3">
+                <img src="assets/images/av1.png" alt="">
+              </div>
+              <div class="small-3">
+                <img src="assets/images/av2.png" alt="">
+              </div>
+              <div class="small-3">
+                <img src="assets/images/av3.png" alt="">
+              </div>
+              <div class="small-3">
+                <img src="assets/images/av4.png" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="small-4 cell aboutTreasures" id="aboutEarnTreasurs">
+            <div class="grid-y grid-frame align-center">
+              <div class="small-8 cell">
+                <h3>Earn Treasure</h3>
+                <p>As you readventure through books, you will earn treasures!</p>
+              </div>
+            </div>
+          </div>
+          <!--Treasures  -->
+          <div class="small-12 medium-3 cell aboutTreasures" id="aboutTreasures">
+            <div class="grid-x align-justify">
+              <div class="small-4">
+                <img src="assets/images/treasures/1.png" alt="">
+              </div>
+              <div class="small-4">
+                <img src="assets/images/treasures/2.png" alt="">
+              </div>
+              <div class="small-4">
+                <img src="assets/images/treasures/3.png" alt="">
+              </div>
+              <div class="small-4">
+                <img src="assets/images/treasures/4.png" alt="">
+              </div>
+              <div class="small-4">
+                <img src="assets/images/treasures/5.png" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="small-12 medium-5 cell aboutTreasures">
+            <div class="grid-y grid-frame align-justify" id="aboutTools">
+              <div class="small-2 cell">
+                <h3>Use Readventure Tools</h3>
+              </div>
+              <div class="small-8 cell">
+                <div class="grid-x">
+                  <div class="small-4 cell"><span><i class="fi-book-bookmark menuIcon"></i></span></div>
+                  <div class="small-8 cell">
+                    <p>Digital Bookmark</p>
+                  </div>
+
+                  <div class="small-4 cell"><span><i class="fi-page-edit menuIcon"></i></span></div>
+                  <div class="small-8 cell">
+                    <p>Readventure Notes</p>
+                  </div>
+
+                  <div class="small-4 cell"><span><i class="fi-quote menuIcon"></i></span></div>
+                  <div class="small-8 cell">
+                    <p>Readventure Dictionary</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="small-12 medium-4 cell teamMember">
-          <h3>Rachel Estrada</h3>
-          <img src="assets/images/rachelHolder.png" alt="Team Member" class="teamMemberPic">
-          <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at
-            its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed
-            to using 'Content here, content here', making it look like readable English.</p>
+        <!--Our Team  -->
+        <div class="small-11 cell" id="ourTeam">
+          <div class="grid-x align-justify" id="team">
+            <div class="small-12 cell homeTitle">
+              <h1>Our Team</h1>
+            </div>
+            <div class="small-12 medium-3 cell teamMember">
+              <h3>Rachel Estrada</h3>
+              <img src="assets/images/rachelHolder.png" alt="Team Member" class="teamMemberPic">
+              <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking
+                at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,
+                as opposed to using 'Content here, content here', making it look like readable English.</p>
+            </div>
+            <div class="small-12 medium-3 cell teamMember">
+              <h3>Cassandra Villaruel</h3>
+              <img src="assets/images/cassandraHolder.png" alt="Team Member" class="teamMemberPic">
+              <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking
+                at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,
+                as opposed to using 'Content here, content here', making it look like readable English.</p>
+            </div>
+            <div class="small-12 medium-3 cell teamMember">
+              <h3>Jakie Rice</h3>
+              <img src="assets/images/jakieHolder.png" alt="Team Member" class="teamMemberPic">
+              <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking
+                at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,
+                as opposed to using 'Content here, content here', making it look like readable English.</p>
+            </div>
+          </div>
         </div>
-        <div class="small-12 medium-4 cell teamMember">
-          <h3>Cassandra Villaruel</h3>
-          <img src="assets/images/cassandraHolder.png" alt="Team Member" class="teamMemberPic">
-          <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at
-            its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed
-            to using 'Content here, content here', making it look like readable English.</p>
-        </div>
-        <div class="small-12 medium-4 cell teamMember">
-          <h3>Jakie Rice</h3>
-          <img src="assets/images/jakieHolder.png" alt="Team Member" class="teamMemberPic">
-          <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at
-            its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed
-            to using 'Content here, content here', making it look like readable English.</p>
+        <div class="small-12 cell" id="footer">
+          <h6>@ Copyright 2017 Jakie W. Rice</h6>
         </div>
       </div>
-
-
-      <!-- </div> -->
-      <!-- <div class="small-12 large-4 cell">
-        <h5>Books</h5>
-        <span class="secondary label">Books</span>
-        <span class="secondary label">Book2</span>
-        <span class="secondary label">Book3</span>
-        <span class="secondary label">Book4</span>
-      </div>
-      <div class="small-12 large-4 cell">
-        <h5>RANDOM MAG</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti quam voluptatum vel repellat ab similique molestias
-          molestiae ea omnis eos, id asperiores est praesentium, voluptate officia nulla aspernatur sequi aliquam.</p>
-      </div> -->
     </div>
-    <!-- <footer>
-      <div class="row expanded callout secondary">
-        <div class="row expanded">
-          <div class="small-12 medium-6 cell">
-            <ul class="menu">
-              <li><a href="#">Legal</a></li>
-              <li><a href="#">Partner</a></li>
-              <li><a href="#">Explore</a></li>
-            </ul>
-          </div>
-          <div class="small-12 medium-6 cell">
-            <ul class="menu align-right">
-              <li class="menu-text">Copyright © 2099 Random Mag</li>
-            </ul>
-          </div>
-        </div>
-      </div>
 
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyC8WTQ2j_fFZaxfR-yh3HIxfWDSStT2GEc",
+        authDomain: "readventure-64ea7.firebaseapp.com",
+        databaseURL: "https://readventure-64ea7.firebaseio.com",
+        projectId: "readventure-64ea7",
+        storageBucket: "readventure-64ea7.appspot.com",
+        messagingSenderId: "137725170405"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <script src="assets/js/vendor/jquery.js"></script>
+    <script src="assets/js/vendor/foundation.min.js"></script>
 
-     </footer>
-    </footer>  -->
-    <!--rachel Tuesday entries end-->
-  </div>
-  </div>
-
-  <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyC8WTQ2j_fFZaxfR-yh3HIxfWDSStT2GEc",
-      authDomain: "readventure-64ea7.firebaseapp.com",
-      databaseURL: "https://readventure-64ea7.firebaseio.com",
-      projectId: "readventure-64ea7",
-      storageBucket: "readventure-64ea7.appspot.com",
-      messagingSenderId: "137725170405"
-    };
-    firebase.initializeApp(config);
-  </script>
-  <script src="assets/js/vendor/jquery.js"></script>
-  <script src="assets/js/vendor/foundation.min.js"></script>
-
-  <script src="assets/js/ui.js"></script>
-  <script src="assets/js/app.js"></script>
+    <script src="assets/js/ui.js"></script>
+    <script src="assets/js/app.js"></script>
 </body>
 
 </html>

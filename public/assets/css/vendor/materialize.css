@@ -1,0 +1,66 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  #main {
+    flex: 1 1 auto;
+  }
+
+  #brand-logo {
+  	padding-left: 0px, 0px, px, 10px;
+  }
+
+ .collapsible, .card-content, .card-reveal, .collapsible-header {
+  	    position: relative;
+  }
+
+  //*#mainavatar {
+    height: 80vh !important;
+    display: inline-block;
+
+  }*//
+
+  element.style {
+    height: 100%;
+    max-height: 500px;
+    width: auto;
+  }
+
+  .card {
+    height: 80%;
+    
+  
+  }
+
+  #mainavatar > div.card-image.waves-effect.waves-block.waves-light {
+    max-height: 80%;
+  }
+
+  @media only screen and (max-width: 980px) {
+    
+ #mainavatar {
+  height: 30%;
+      
+    }
+  }
+
+
+  @media screen and (max-width: 768px) {
+    
+ #mainavatar {
+  height: 40%;
+      
+    }
+
+}
+
+@media only screen and (max-width: 640px) {
+
+ #mainavatar {
+  height: 50%;
+      
+    }
+
+}
